@@ -2,7 +2,7 @@ import './index.css';
 import {useGetOrdersQuery} from "../../store/apiSlice/apiSlice";
 import ContainerOrder from "../../components/ContainerOrder";
 import {BsFillPlusCircleFill} from "react-icons/bs";
-import React, {useState} from "react";
+import { useState} from "react";
 import PopupProduct from "../../components/PopupProduct";
 
 const Orders = () => {
@@ -29,7 +29,7 @@ const Orders = () => {
             :
             ''
           }
-          {!toggle && <PopupProduct/>}
+          {!toggle && <PopupProduct setToggle={setToggle} data={data}/>}
       </div>
     </div>
   );

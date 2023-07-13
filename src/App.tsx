@@ -9,10 +9,10 @@ import {useSelector} from "react-redux";
 import {RootState} from "./store";
 
 function App() {
-  const {isOpen: isOpen, title} = useSelector((store: RootState) => store.modal)
+  const {isOpen: isOpenModal, title} = useSelector((store: RootState) => store.modal)
   return (
     <>
-      {isOpen && <Modal title={title} />}
+      {isOpenModal && <Modal title={title} />}
       <TopMenu/>
       <div className='wrap-app'>
         <NavigationMenu/>

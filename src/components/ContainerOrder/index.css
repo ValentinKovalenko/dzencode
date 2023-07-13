@@ -5,7 +5,7 @@
   height: 50px;
   border: lightgray solid 1px;
   border-radius: 5px;
-  padding: 0px 10px;
+  padding-left: 10px;
   width: 100%;
   margin: 10px 0px;
   color: gray;
@@ -37,5 +37,6 @@ p {
 }
 
 .small-text-order {
+  text-align: center;
   font-size: 12px;
 }

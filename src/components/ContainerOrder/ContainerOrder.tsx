@@ -1,22 +1,21 @@
 import './index.css';
-import {MdDelete, MdOutlineKeyboardArrowRight} from "react-icons/md";
 import {TfiMenuAlt} from "react-icons/tfi";
 import {useGetProductsQuery} from "../../store/apiSlice/apiSlice";
 import {OrderTypesProps} from "./containerOrder.types";
 import {PriceTypesProps} from "../../store/apiSlice/apiSlice.types";
-import {useDispatch} from "react-redux";
-import {openModal} from "../../store/modalSlice/modalSlice";
 import React from "react";
 import {useSearchParams} from "react-router-dom";
+import IconOrder from "../IconOrder";
+import dayjs from "dayjs";
 
 const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setToggle}) => {
   const {data: productData} = useGetProductsQuery({params: {order: id}})
   let [searchParams, setSearchParams] = useSearchParams();
 
   const openPopup = () => {
-    searchParams.set('orderId', id);
+    searchParams.set('orderId', id.toString());
     setSearchParams(searchParams);
-    setToggle(!toggle)
+    setToggle(false)
   };
 
   const prices = productData?.reduce((acc: any, cur: any) => {
@@ -29,7 +28,7 @@ const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setT
       }
     });
   }, []);
-  const dispatch = useDispatch();
+
   return (
     <div className='wrap-container-order'>
       {toggle &&
@@ -45,7 +44,7 @@ const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setT
         </div>
       </div>
       <div>
-        <p>{date}</p>
+        <p className='small-text-order'>{dayjs(date).format('DD/MM')}</p>
         <p>{date}</p>
       </div>
       {
@@ -58,7 +57,7 @@ const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setT
               </div>) : ''}
           </div>
       }
-      {toggle ? <MdDelete cursor='pointer' onClick={()=>dispatch(openModal({title}))}/> : <MdOutlineKeyboardArrowRight size={20}/>}
+       <IconOrder title={title} id={id}/>
     </div>
   );
 };
