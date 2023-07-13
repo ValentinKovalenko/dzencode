@@ -1,0 +1,12 @@
+.popup {
+  top: 0;
+  right: -210%;
+  position: absolute;
+  width: 200%;
+  border: lightgray solid 1px;
+  border-radius: 5px;
+}
+
+.popup-content {
+  padding: 10px;
+}

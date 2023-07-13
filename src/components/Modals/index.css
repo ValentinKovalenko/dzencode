@@ -1,0 +1,47 @@
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.modal-content {
+  border-radius: 5px;
+  background-color: white;
+  width: 40%;
+  transform: scale(1);
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  box-shadow: 0px 0px 5px 2px gray;
+}
+
+h4{
+  padding: 30px;
+  margin: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border-top: lightgray solid 1px;
+}

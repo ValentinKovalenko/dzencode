@@ -1,0 +1,17 @@
+.weekday {
+  margin: 0;
+  font-size: 14px;
+}
+
+.bloc-clock {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  color: darkgreen;
+  margin-left: 10px;
+}

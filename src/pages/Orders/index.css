@@ -1,0 +1,27 @@
+.wrap-order {
+  margin: 3% 5%;
+  width: 100%;
+}
+
+.wrap-order-toggle {
+  position: relative;
+  width: 32%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 50px;
+}
+
+.icon-order {
+  display: flex;
+  align-items: center;
+  color: darkgreen;
+  margin-right: 10px;
+}
+
+.icon-order:hover {
+  cursor: pointer;
+}

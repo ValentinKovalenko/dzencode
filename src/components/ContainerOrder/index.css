@@ -1,0 +1,41 @@
+.wrap-container-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border: lightgray solid 1px;
+  border-radius: 5px;
+  padding: 0px 10px;
+  width: 100%;
+  margin: 10px 0px;
+  color: gray;
+}
+
+.wrap-container-order:hover {
+  box-shadow: 0px 10px 18px -9px gray;
+}
+
+.icon-order-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: lightgray solid 1px;
+  border-radius: 100%;
+  color: gray;
+  margin-right: 10px;
+}
+
+.icon-bloc {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+.small-text-order {
+  font-size: 12px;
+}

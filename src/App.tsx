@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavigationMenu from "./components/ NavigationMenu";
+import {Route, Routes} from "react-router-dom";
+import Orders from "./pages/Orders";
+import Products from "./pages/Products";
+import TopMenu from "./components/TopMenu";
+import './index.css';
+import Modal from "./components/Modals";
+import {useSelector} from "react-redux";
+import {RootState} from "./store";
 
 function App() {
+  const {isOpen: isOpen, title} = useSelector((store: RootState) => store.modal)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isOpen && <Modal title={title} />}
+      <TopMenu/>
+      <div className='wrap-app'>
+        <NavigationMenu/>
+        <Routes>
+          <Route path='/orders' element={<Orders/>}/>
+          <Route path='/products' element={<Products/>}/>
+        </Routes>
+      </div>
+    </>
   );
 }
 
