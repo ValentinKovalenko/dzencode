@@ -5,10 +5,10 @@ export const sliceApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
     endpoints: (builder) => ({
         getOrders: builder.query({
-            query: () => `http://localhost:3004/orders`,
+            query: () => `https://dzencode-server-jzgj.vercel.app/orders`,
         }),
         getProducts: builder.query({
-            query: ({params}) => ({url:`http://localhost:3004/products`, params}),
+            query: ({params}) => ({url:`https://dzencode-server-jzgj.vercel.app/products`, params}),
         }),
     }),
 })
