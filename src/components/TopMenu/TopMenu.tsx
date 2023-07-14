@@ -1,5 +1,5 @@
 import './index.css';
-import Time from "../Time";
+import DataTime from "../DataTime";
 
 const TopMenu = () => {
   return (
@@ -8,7 +8,7 @@ const TopMenu = () => {
         <span className='inventory'>INVENTORY</span>
         <input className='form' type='text' placeholder='Поиск'/>
       </div>
-      <Time/>
+      <DataTime/>
     </div>
   );
 };

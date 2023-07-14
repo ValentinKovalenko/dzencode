@@ -10,14 +10,12 @@ const Time = () => {
   }, [])
 
   return (
-    <div>
-      <p className='weekday'>Вторник</p>
+    <>
       <div className='bloc-clock'>
-        <span>06 Апр, 2023</span>
         <span className='clock'><LuClock9/></span>
         <span>{time.toLocaleTimeString()}</span>
       </div>
-    </div>
+    </>
   );
 };
 

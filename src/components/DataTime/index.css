@@ -1,0 +1,12 @@
+.container-data {
+  display: flex;
+}
+
+.weekday {
+  margin: 0;
+  font-size: 14px;
+}
+
+.month{
+  font-size: 12px;
+}

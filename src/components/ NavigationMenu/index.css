@@ -1,8 +1,9 @@
 .wrap-nav {
   display: flex;
   flex-direction: column;
-   min-width: 15%;
+  min-width: 15%;
   text-align: center;
+  align-items: center;
   height: 90vh;
   box-shadow: 10px 1px 5px rgba(0,0,0,0.05);
 }
@@ -15,13 +16,17 @@
 }
 
 .link {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
   margin: 20px 20px;
   font-weight: bold;
   color: black;
   text-decoration-color: white;
 }
 
-.link:focus {
-  text-decoration-color: darkgreen;
-  text-decoration-style: solid;
+.active-link {
+  border-bottom: #79cc35 solid 2px;
 }
