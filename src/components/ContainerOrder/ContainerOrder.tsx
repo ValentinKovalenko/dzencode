@@ -3,12 +3,12 @@ import {TfiMenuAlt} from "react-icons/tfi";
 import {useGetProductsQuery} from "../../store/apiSlice/apiSlice";
 import {OrderTypesProps} from "./containerOrder.types";
 import {PriceTypesProps} from "../../store/apiSlice/apiSlice.types";
-import React from "react";
 import {useSearchParams} from "react-router-dom";
 import IconOrder from "../IconOrder";
 import dayjs from "dayjs";
+import {motion} from "framer-motion";
 
-const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setToggle}) => {
+const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id, setToggle}) => {
   const {data: productData} = useGetProductsQuery({params: {order: id}})
   let [searchParams, setSearchParams] = useSearchParams();
 
@@ -30,14 +30,18 @@ const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setT
   }, []);
 
   return (
-    <div className='wrap-container-order'>
+    <motion.div className='wrap-container-order'
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+    >
       {toggle &&
           <div>
               <p>{title}</p>
           </div>
       }
       <div className='icon-bloc'>
-        <div className='icon-order-container'><TfiMenuAlt cursor='pointer' onClick={()=>openPopup()} size={20}/></div>
+        <div className='icon-order-container'><TfiMenuAlt cursor='pointer' onClick={() => openPopup()} size={20}/></div>
         <div>
           <p>{productData?.length}</p>
           <p className='small-text-order'>Продукта</p>
@@ -57,9 +61,8 @@ const ContainerOrder: React.FC<OrderTypesProps> = ({title, date, toggle, id,setT
               </div>) : ''}
           </div>
       }
-       <IconOrder title={title} id={id}/>
-    </div>
+      <IconOrder title={title} id={id}/>
+    </motion.div>
   );
 };
-
 export default ContainerOrder;

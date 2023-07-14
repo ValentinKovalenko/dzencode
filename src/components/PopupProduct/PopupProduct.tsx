@@ -7,6 +7,7 @@ import {ContainerTypesProps} from "../ContainerProduct/container.types";
 import {IoIosClose} from "react-icons/io";
 import {MdDelete} from "react-icons/md";
 import {PopupProductTypes} from "./popupProduct.types";
+import { motion } from 'framer-motion';
 
 const PopupProduct: React.FC<{setToggle: any, data: PopupProductTypes[]}> = ({setToggle, data}) => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -28,7 +29,11 @@ const PopupProduct: React.FC<{setToggle: any, data: PopupProductTypes[]}> = ({se
   const titleOrder = data?.filter((item)=> item.id === Number(orderId))
 
   return (
-    <div className='popup'>
+    <motion.div
+      initial={{x: 100, opacity: 0,}}
+      animate={{opacity: 1, x: 0}}
+      transition={{duration: 0.5}}
+      className='popup'>
       <div className='popup-content'>
         <div className='close-popup'>
           <IoIosClose onClick={closePopup} size={20}/>
@@ -51,7 +56,7 @@ const PopupProduct: React.FC<{setToggle: any, data: PopupProductTypes[]}> = ({se
           )
         }
       </div>
-    </div>
+    </motion.div>
   );
 };
 
