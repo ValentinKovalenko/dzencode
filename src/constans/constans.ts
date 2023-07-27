@@ -20,3 +20,8 @@ export const textAnimation = {
 
 export const weekday = dayjs(new Date().toDateString()).format('dddd')
 export const month = dayjs(new Date().toDateString()).format('D MMM, YYYY')
+
+export const pathname = [
+  {label: '/orders', value: 'ПРИХОД'},
+  {label: '/products', value: 'ПРОДУКТЫ'}
+]
