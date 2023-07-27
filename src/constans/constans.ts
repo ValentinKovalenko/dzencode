@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export const category = [
   {label: 'Все', value: ''},
   {label: 'Монитор', value: 'Monitors'},
@@ -15,3 +17,6 @@ export const textAnimation = {
     transaction: {delay: custom * 0.2}
   })
 }
+
+export const weekday = dayjs(new Date().toDateString()).format('dddd')
+export const month = dayjs(new Date().toDateString()).format('D MMM, YYYY')

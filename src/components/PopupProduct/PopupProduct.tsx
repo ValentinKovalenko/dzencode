@@ -30,7 +30,7 @@ const PopupProduct: React.FC<{setToggle: any, data: PopupProductTypes[]}> = ({se
 
   return (
     <motion.div
-      initial={{x: 100, opacity: 0,}}
+      initial={{x: 50, opacity: 0,}}
       animate={{opacity: 1, x: 0}}
       transition={{duration: 0.5}}
       className='popup'>

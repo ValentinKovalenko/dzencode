@@ -14,19 +14,3 @@
   border-radius: 50%;
   width: 50%;
 }
-
-.link {
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px;
-  margin: 20px 20px;
-  font-weight: bold;
-  color: black;
-  text-decoration-color: white;
-}
-
-.active-link {
-  border-bottom: #79cc35 solid 2px;
-}

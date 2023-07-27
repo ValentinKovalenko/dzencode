@@ -22,7 +22,7 @@ const Products = () => {
   return (
     <div className='wrap-products'>
       <motion.div
-        initial={{x: 100, opacity: 0,}}
+        initial={{x: 50, opacity: 0,}}
         animate={{opacity: 1, x: 0}}
         transition={{duration: 1}}
         className='header'>
